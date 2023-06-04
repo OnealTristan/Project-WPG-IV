@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c47bad983c70c0408c5fb7b3d45b017, type: 3}
+  m_Name: CraftingKunci
+  m_EditorClassIdentifier: 
+  Materials:
+  - Item: {fileID: 11400000, guid: c32882eeef390bb41a7edf6d74299fb3, type: 2}
+    Amount: 1
+  - Item: {fileID: 11400000, guid: 41f4800c255e9ff41a9a5e042c27371a, type: 2}
+    Amount: 1
+  - Item: {fileID: 11400000, guid: 69edbb82f64bf6344bd957090eac1979, type: 2}
+    Amount: 1
+  Results:
+  - Item: {fileID: 11400000, guid: 4cc0dff473eb51648902a450d246c81b, type: 2}
+    Amount: 1

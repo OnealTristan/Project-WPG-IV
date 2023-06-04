@@ -5,7 +5,9 @@ using UnityEngine;
 public class DoorUnlock : MonoBehaviour
 {
 	public GameObject Tutup;
+	public GameObject Buka;
 	public GameObject Masuk;
+	public GameObject Lock;
 	public GameObject Gembok;
 	public InventoryManager itemcontainer;
     public Item item;
@@ -15,6 +17,8 @@ public class DoorUnlock : MonoBehaviour
 		if (itemcontainer.ItemCount(item) > 0)
 		{
 			Tutup.SetActive(false);
+			Lock.SetActive(false);
+			Buka.SetActive(true);
 			Gembok.SetActive(false);
 			Masuk.SetActive(true);
 			Debug.Log("Berhasil!");

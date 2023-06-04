@@ -10,7 +10,9 @@ public class InventoryManager : MonoBehaviour, IItemContainer
 	public List<Item> Items = new List<Item>();
 
 	public Transform ItemContent;
-	public GameObject InventoryItem;
+	public InventoryItem inventoryItem;
+
+	private List<InventoryItem> inventoryItemList = new List<InventoryItem>();
 
 	public void Awake()
 	{
@@ -21,19 +23,25 @@ public class InventoryManager : MonoBehaviour, IItemContainer
 	{
 		Items.Add(item);
 
-		GameObject obj = Instantiate(InventoryItem, ItemContent);
-		var ItemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
-
-		ItemIcon.sprite = item.icon;
+		InventoryItem obj = Instantiate(inventoryItem, ItemContent);
+		inventoryItemList.Add(obj);
+		
+		obj.item = item;
+		obj.image.sprite = item.icon;
 	}
 
-	public void Remove(Item item)
+	public bool Remove(Item item)
 	{
-		Items.Remove(item);
-        foreach (Transform item_ in ItemContent)
-        {
-			Destroy(item_.gameObject);
+		for (int i = 0; i < inventoryItemList.Count; i++)
+		{
+            if (inventoryItemList[i].item == item)
+            {
+				Items.Remove(item);
+				Destroy(inventoryItemList[i].gameObject);
+				return true;
+			}
 		}
+		return false;
 	}
 
 	public bool ContainsItem(Item item)
